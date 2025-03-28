@@ -1,7 +1,7 @@
 // src/app/admin/page.tsx (Server Component)
 import { redirect } from "next/navigation";
 import { getServerSession } from "next-auth/next";
-import { authOptions } from "../api/auth/[...nextauth]/route";
+import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions"; 
 import AdminPanel from "./AdminPanel";
 
 export default async function AdminPage() {

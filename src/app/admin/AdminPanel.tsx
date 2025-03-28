@@ -63,9 +63,13 @@ export default function AdminPanel() {
         const data = await res.json();
         setMessage("Error: " + (data.error || "Unknown error"));
       }
-    } catch (error: any) {
-      setMessage("Error: " + error.message);
-    }
+    } catch (error: unknown) {
+        if (error instanceof Error) {
+          setMessage("Error: " + error.message);
+        } else {
+          setMessage("An unknown error occurred");
+        }
+      }
   }
 
   // Start editing a row
@@ -109,9 +113,13 @@ export default function AdminPanel() {
         const data = await res.json();
         setMessage("Error: " + (data.error || "Unknown error"));
       }
-    } catch (error: any) {
-      setMessage("Error: " + error.message);
-    }
+    } catch (error: unknown) {
+        if (error instanceof Error) {
+          setMessage("Error: " + error.message);
+        } else {
+          setMessage("An unknown error occurred");
+        }
+      }
   }
 
   // DELETE a row
@@ -134,9 +142,13 @@ export default function AdminPanel() {
         const data = await res.json();
         setMessage("Error: " + (data.error || "Unknown error"));
       }
-    } catch (error: any) {
-      setMessage("Error: " + error.message);
-    }
+    } catch (error: unknown) {
+        if (error instanceof Error) {
+          setMessage("Error: " + error.message);
+        } else {
+          setMessage("An unknown error occurred");
+        }
+      }
   }
 
   return (

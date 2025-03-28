@@ -1,6 +1,4 @@
-import Image from "next/image";
 import DashboardTable from "@/components/DashboardTable";
-import AddRowForm from "@/components/AddRowForm";
 
 export default function Home() {
   return (

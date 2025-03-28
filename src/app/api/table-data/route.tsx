@@ -9,7 +9,7 @@ interface TableRow {
 
 // Simple in-memory data (sample)
 let nextId = 1;
-let tableData: TableRow[] = [];
+const tableData: TableRow[] = [];
 
 // GET
 export async function GET() {
