@@ -1,5 +1,12 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
 
 
 interface TableRow {
@@ -18,34 +25,30 @@ export default function DashboardTable() {
   }, []);
 
   return (
-    <section style={{ marginBottom: "2rem" }}>
-      <h2>Posts for the week</h2>
-      <table
-        style={{
-          width: "100%",
-          borderCollapse: "collapse",
-          marginTop: "1rem",
-        }}
-      >
-        <thead>
-          <tr style={{ backgroundColor: "#f2f2f2" }}>
-            <th style={{ border: "1px solid #ddd", padding: "8px" }}>Name</th>
-            <th style={{ border: "1px solid #ddd", padding: "8px" }}>Post</th>
-          </tr>
-        </thead>
-        <tbody>
+  <div style={{ maxWidth: "500px", margin: "auto" }} >
+    <TableContainer component={Paper}>
+      <Table sx={{ minWidth: 300}} aria-label="simple table">
+        <TableHead>
+          <TableRow>
+            <TableCell align="center">Name</TableCell>
+            <TableCell align="center">Post</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
           {tableData.map((item, index) => (
-            <tr key={index}>
-              <td style={{ border: "1px solid #ddd", padding: "8px" }}>
+            <TableRow
+              key={index}
+              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+            >
+              <TableCell component="th" scope="row">
                 {item.name}
-              </td>
-              <td style={{ border: "1px solid #ddd", padding: "8px" }}>
-                {item.post}
-              </td>
-            </tr>
+              </TableCell>
+              <TableCell>{item.post}</TableCell>
+            </TableRow>
           ))}
-        </tbody>
-      </table>
-    </section>
+        </TableBody>
+      </Table>
+    </TableContainer>
+  </div>
   );
 }
