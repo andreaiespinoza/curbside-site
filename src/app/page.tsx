@@ -1,9 +1,10 @@
 import DashboardTable from "@/components/DashboardTable";
 
+
 export default function Home() {
   return (
     <div style={{ maxWidth: "800px", margin: "0 auto", padding: "2rem" }}>
-      <h1 style={{ textAlign: "center" }}>My Dashboard</h1>
+      <h1 style={{ textAlign: "center" }}>Curbside Dashboard</h1>
 
       {/* Table - client component fetching /api/table-data */}
       <DashboardTable />
@@ -13,7 +14,6 @@ export default function Home() {
         <h2>Apple Music Playlist</h2>
         <iframe
           allow="autoplay *; encrypted-media *;"
-          frameBorder="0"
           height="450"
           style={{
             width: "100%",
