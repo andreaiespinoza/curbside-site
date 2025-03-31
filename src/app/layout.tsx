@@ -28,8 +28,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <footer><a href="https://www.flaticon.com/free-icons/cone" title="cone icons">Cone icons created by Freepik - Flaticon</a></footer>
       </body>
-      <footer><a href="https://www.flaticon.com/free-icons/cone" title="cone icons">Cone icons created by Freepik - Flaticon</a></footer>
     </html>
   );
 }
