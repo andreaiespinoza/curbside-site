@@ -25,7 +25,7 @@ export default function DashboardTable() {
   }, []);
 
   return (
-  <div style={{ maxWidth: "500px", margin: "auto" }} >
+  <div style={{ maxWidth: "500px" }} >
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 300}} aria-label="simple table">
         <TableHead>
