@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 
-const pages =['Home', 'Resources']
+const pages =[{name:'Home', link:'/'}, {name:'Resources', link:'/resources'}]
 
 export default function NavBar() {
   return (
@@ -29,14 +29,15 @@ export default function NavBar() {
           <Box sx={{ display: { xs: 'none', md: 'flex' , marginLeft: 0} }}>
             {pages.map((page) => (
               <Button
-                key={page}
+                key={page.name}
                 sx={{ my: 2, color: 'white', display: 'block' }}
+                href={page.link}
               >
-                {page}
+                {page.name}
               </Button>
             ))}
           </Box>
-          <Button color="inherit" sx={{color: "white"}}>Login</Button>
+          <Button color="inherit" sx={{color: "white"}} href="/admin">Admin</Button>
         </Toolbar>
       </AppBar>
     </Box>
